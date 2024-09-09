@@ -1,0 +1,606 @@
+:root {
+    --parent-spacing-inline: 100px;
+    --color-text-secondary: #e4e4e4;
+    --header-height: 85px;
+    --image-container-height:683px;
+    --footer-height: 405px;
+}
+@font-face {
+    font-family: 'Museo_Slab_500';
+    src: url('./fonts/Museo_Slab_500.otf');
+}
+@font-face {
+    font-family: 'Museo_Slab_300';
+    src: url('./fonts/Museo_Slab_300.otf');
+}
+@font-face {
+    font-family: 'Museo_Slab_100';
+    src: url('./fonts/Museo_Slab_100.otf');
+}
+body{
+    padding: 0;
+    margin: 0;
+    overflow: scroll;
+    box-sizing: border-box;
+}
+
+#parent{
+    max-width: 1400px;
+    max-height: 1774px;
+    margin: 0 auto;
+    padding-inline: var(--parent-spacing-inline);
+    padding-block: 0px;
+    position: relative;
+    overflow: hidden;
+    
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--header-height);
+   
+}
+header button#header-logo {
+    font-family: 'Museo_Slab_500';
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.26px;
+    color: #3c3c3c;
+    background-color: #e4e4e4;
+    min-height: 35px;
+    min-width: 88px;
+    border: none;
+    text-transform: uppercase;
+}
+header #header-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+header #header-links a {
+    list-style: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #3c3c3c;
+    font-family: 'Museo_Slab_500';
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.26px;
+}
+
+/* ---------------------------------------------------main----------------------------------------------- */
+
+main{
+   display: flex;
+}
+main div.left {
+    flex: 1;
+    padding-block: calc(165px - var(--header-height));
+   
+}
+main div.left h1{
+    font: normal normal normal 36px/40px 'Museo_Slab_300';
+    letter-spacing: 0px;
+    color: #3c3c3c;
+    opacity: 1;
+    min-width: 190px;
+    display: inline-block;
+    min-height: 40px;
+    margin-block: 0px;
+    font-size: 36px;
+}
+main div.left p{
+    max-width: 398px;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #646464;
+    font-family: 'Museo_Slab_300';
+    font-size: 22px;
+    line-height: 35.5px;
+    padding-block: 0px;
+    margin-block: 0px;
+    margin-top: 70px;
+}
+
+main div.left h2{
+    display: inline-block;
+    padding-block: 0;
+    margin-block: 100px 50px;
+    font: normal normal normal 26px/29px 'Museo_Slab_300';
+    letter-spacing: 0px;
+    color: #3971B1;
+    opacity: 1;
+}
+
+.form-con{
+    margin-right: 124.5px;
+    
+
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    overflow: hidden;
+   
+
+
+}
+
+form input{
+    max-width: 100%;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #D3D3D3;
+    font-family: 'Museo_Slab_300';
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #8E8E8E;
+    opacity: 1;
+    text-transform: capitalize;
+    cursor: pointer;
+    
+
+}
+input:focus {
+    outline: none;
+}
+.dropdown-options{
+    display: none;
+    
+}
+.dropdown-options{
+    display: none;
+}
+#dropdown-options>div{
+
+    z-index: 100;
+    border: 1px solid red;
+    max-width: 100%;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #D3D3D3;
+    font-family: 'Museo_Slab_300';
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #8E8E8E;
+    opacity: 1;
+    text-transform: capitalize;
+    cursor: pointer;
+
+}
+
+#newInputContainer>input{
+    z-index: 100;
+    max-width: 100%;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #D3D3D3;
+    font-family: 'Museo_Slab_300';
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #8E8E8E;
+    opacity: 1;
+    text-transform: capitalize;
+    cursor: pointer;
+    
+}
+#query-input{
+    width: 100%;
+}
+#query-con{
+    max-width: 100%;
+    position: relative;
+    /* display: flex; */
+}
+#dropdown-icon{
+    position: absolute;
+    top:25px;
+    right: 0px;
+}
+form button{
+    margin-top:35px;
+    min-height: 45px;
+    min-width: 150px;
+    background: #3971B1;
+    color: var(--color-text-secondary);
+    align-self: flex-end;
+    border: none;
+    
+    
+}
+
+
+main div.right{
+    flex:1;
+}
+
+main div.right .item-1 .img-con{
+    position: absolute;
+    width: 729px;
+    height: var(--image-container-height);
+    top:0;
+    right: 0;
+    z-index: -1; 
+    
+}
+
+main div.right .img-con .img-1{
+    width: 838px;
+    object-fit: contain;
+}
+main div.right .img-con .img-2{
+    position: absolute;
+    top:414.98px;
+    left:253.98px 
+
+}
+main div.right .img-con .para{
+    position: absolute;
+    margin-block: 0;
+    padding-block: 0;
+    right: 100px;
+    top:100px;
+    font: normal normal normal 12px/14px 'Museo_Slab_300';
+    letter-spacing: 0.24px;
+    color: #AFAFAF; 
+}
+main .item-2{
+    padding-block: 0;
+    margin-top: calc(743px - var(--header-height));
+    margin-bottom: 120px;
+    margin-right: 20.5px;
+    margin-left: 100.5px;
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+    align-items: flex-start;
+}
+main .item-2-p-1{
+    padding-block: 0;
+    margin-block: 0;
+    font-family: 'Museo_Slab_300';
+    font-size: 28px;
+    line-height: 42px;
+    max-width: 479px;
+    max-height: 118px;
+    letter-spacing: 0px;
+    color: #383838;
+    opacity: 1;
+}
+main .item-2-p-2{
+    margin-block: 0;
+    max-width:455.45px;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0px;
+    color: #8E8E8E;
+    
+}
+.mini{
+    display: none;
+}
+main .item-2-block-1{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    align-items: flex-start;
+}
+main .item-2-block-1 h2{
+    padding-block: 0;
+    margin-block: 0;
+    font: normal normal normal 26px/29px 'Museo_Slab_300';
+    letter-spacing: 0px;
+    color: #3971B1;
+    display: inline-block;
+
+    
+}
+
+main .item-2-block-1-inner{
+    padding-block:0;
+    width: 479px;
+    display: flex;
+    flex-direction: column;
+    max-height: 51px;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Museo_Slab_300';
+
+}
+main .item-2-block-1-inner2{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Museo_Slab_300';
+    letter-spacing: 0px;
+    color: #8E8E8E;
+
+}
+
+
+ footer{
+    height: var(--footer-height);
+    padding-inline: var(--parent-spacing-inline);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+ }
+
+footer .content-1{
+    margin-top:51px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.footer-logo{
+    padding: 10px 24px;
+    font: normal normal normal 13px/15px 'Museo_Slab_500';
+    min-width: 88px;
+    letter-spacing: 0.26px;
+    color: #3C3C3C;
+    border: none;
+    text-transform: capitalize;
+}
+
+.footer-item{
+    display: flex;
+    gap:190px
+}
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    min-width: 134px;
+    min-height: 254px;
+    padding-block: 0;
+}
+.footer-links>a{
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 31.5px;
+    font-family: 'Museo_Slab_300';
+    letter-spacing: 0px;
+    color: #383838;
+}
+.footer-item-1>h2{
+    padding-block: 0;
+    margin-block: 0;
+    font: normal normal normal 18px/19px 'Museo_Slab_500';
+    max-width: 204.45px;
+    letter-spacing: 0px;
+    color: #818181;
+    opacity: 1;
+}
+.footer-input-con{
+    min-width: 272px;
+    margin-block: 20px;
+}
+.footer-input-con>input{
+    font-family: 'Museo_Slab_300';
+    padding-block: 0;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: #818181;
+    background: #FFFFFF;
+    width: 100%;
+    border: 1px solid #F0F0F0;
+    opacity: 1;
+    text-transform: capitalize;
+}
+.footer-btn{
+    font: normal normal normal 12px/14px 'Museo_Slab_500';
+    min-width: 130px;
+    min-height: 40px;
+    background: #3971B1;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    border: none;
+}
+.footer-item-2{
+    display: flex;
+    flex-direction: column;
+    gap:17px;
+    justify-content: flex-end;
+    align-items: center;
+    padding-block: 0;
+    margin-block: 0;
+}
+
+.footer-item-2>img{
+    width: 45px;
+    height: 45px;
+}
+.footer-item-2>p{
+    padding-block: 0;
+    margin-block: 0;
+    
+}
+
+footer .content-2{
+    display: flex; 
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid #EAEAEA;
+}
+
+.content-2>p{
+    font: normal normal normal 14px/20px 'Museo_Slab_500';
+    letter-spacing: 0px;
+    color: #818181;
+    opacity: 1;
+    margin-block: 0;
+}
+
+.content-2 .p-1{
+    margin-right: 269.69px;
+}
+.content-2 .p-2{
+    margin-right: 378.69px;
+   
+}
+
+@media (max-width: 375px) {
+    body{
+        height: 667px;
+    }
+    #parent{
+        max-width: 375px;
+        height: 1955px;
+        border: 2px solid red;
+        padding-inline: 20px;
+        padding-block: 0;
+        position: relative;
+        
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 75px;
+        border-bottom: 1px solid black;
+    }
+    header button#header-logo {
+        font-family: 'Museo_Slab_500';
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.26px;
+        color: #3c3c3c;
+        background-color: #e4e4e4;
+        min-height: 35px;
+        min-width: 88px;
+        border: none;
+        text-transform: uppercase;
+    }
+    header #header-links {
+        display: none;
+    }
+    main{
+        display: block;
+    }
+    main div.left h2{
+        width: 100%;
+        background: #3971B1;
+        font: normal normal normal 12px/14px 'Museo_Slab_300';
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        min-height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        position: absolute;
+        top:573px;
+       
+
+    }
+    main div.left h1{
+        display: none;
+    }
+    main div.left p{
+        display: none;
+    }
+    form{
+        display: none;
+    }
+    
+    main div.right .item-1 .img-con{
+        position: absolute;
+        width: 352px;
+        height: 541px;
+        top:0;
+        right: 0;
+        z-index: -1; 
+        border: 1px solid gray;
+        
+    }
+    main div.right .img-con .img-1{
+        width: 664px;
+        object-fit: contain;
+    }
+    main div.right .img-con .para{
+        display: none;
+    }
+    main .item-2{
+        margin-top: 0;
+        margin-left: 0px;
+        position: absolute;
+        top:125px;
+        width: 331px;
+        display: block;
+
+    }
+    main .item-2-p-1{
+        padding-left: 0;
+        font: normal normal normal 24px/36px 'Museo_Slab_300';
+        width: 331px;
+        color: #383838;
+        min-height: 99px;
+    
+    }
+    main div.right .img-con .img-2{
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        top:337.98px;
+        left: 194.98px;
+        
+
+      
+    
+    }
+    main .item-2-p-2{
+        margin-block: 0;
+        padding-block: 0;
+        max-width:258px;
+        font-size: 16px;
+        line-height: 50px;
+        letter-spacing: 0px;
+        color: #8E8E8E;
+        border: 1px solid gold;
+        margin-top: 40px;
+        
+    }
+    main .item-2-p-2 span{
+        border: 1px solid green;
+        padding-block: 0;
+
+    }
+    main .item-2-block-1{
+        display: none;
+    }
+    .mini{
+        position: absolute;
+        margin-top: 688px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .item-2-mini-block-1>h2{
+        font: normal normal normal 16px/26px 'Museo_Slab_300';
+        letter-spacing: 0px;
+        color: #3971B1;
+        
+    }
+    .item-2-mini-block-1-inner{
+        width: 100%;
+        border-bottom: 1px solid #E6E6E6;
+        display: flex;
+        justify-content: space-between;
+        padding-block: 20px;
+        margin-top: 25px;
+        font: normal normal normal 16px/18px 'Museo_Slab_300';
+        letter-spacing: 0px;
+        color: #8E8E8E;
+    }
+    
+
+}
