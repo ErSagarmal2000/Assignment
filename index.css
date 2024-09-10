@@ -4,6 +4,7 @@
     --header-height: 85px;
     --image-container-height:683px;
     --footer-height: 405px;
+    --min-footer-height: 776px;
 }
 @font-face {
     font-family: 'Museo_Slab_500';
@@ -116,102 +117,121 @@ main div.left h2{
 
 .form-con{
     margin-right: 124.5px;
+
     
 
 }
+#line-img, #cross{
+    display: none;
+}
 form{
-    width: 100%;
+    
+    height: 100vh;
     display: flex;
     flex-direction: column;
     gap:40px;
-    overflow: hidden;
+
+}
+
+form>input,
+.query-input-con>input,
+.subQuery-input-Con>input{
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #D3D3D3 ;
+    font-family: 'Museo_Slab_300';
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    color: #8E8E8E;
+    text-transform: capitalize;
+
+}
+
+.active{
+    position: absolute;
+    top:952px;
+    left:427px;
+}
+
+form .query-input-con{
+    display: flex;
+    position: relative;
+    
    
-
-
+ 
 }
+.query-input-con>img{
+    position: absolute;
+    top: 25px;
+    right: 25px;
 
-form input{
-    max-width: 100%;
-    padding: 20px;
-    border: none;
-    border-bottom: 1px solid #D3D3D3;
-    font-family: 'Museo_Slab_300';
-    line-height: 18px;
-    letter-spacing: 0px;
-    color: #8E8E8E;
-    opacity: 1;
-    text-transform: capitalize;
-    cursor: pointer;
     
-
-}
-input:focus {
-    outline: none;
-}
-.dropdown-options{
-    display: none;
     
 }
-.dropdown-options{
-    display: none;
-}
-#dropdown-options>div{
-
-    z-index: 100;
-    border: 1px solid red;
-    max-width: 100%;
-    padding: 20px;
-    border: none;
-    border-bottom: 1px solid #D3D3D3;
-    font-family: 'Museo_Slab_300';
-    line-height: 18px;
-    letter-spacing: 0px;
-    color: #8E8E8E;
-    opacity: 1;
-    text-transform: capitalize;
-    cursor: pointer;
-
-}
-
-#newInputContainer>input{
-    z-index: 100;
-    max-width: 100%;
-    padding: 20px;
-    border: none;
-    border-bottom: 1px solid #D3D3D3;
-    font-family: 'Museo_Slab_300';
-    line-height: 18px;
-    letter-spacing: 0px;
-    color: #8E8E8E;
-    opacity: 1;
-    text-transform: capitalize;
-    cursor: pointer;
+form .subQuery-input-Con{
+      display: flex;
+      
+      
     
 }
-#query-input{
+
+
+
+#option-con{
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
-#query-con{
-    max-width: 100%;
-    position: relative;
-    /* display: flex; */
+#query{
+   width: 100%;
 }
-#dropdown-icon{
-    position: absolute;
-    top:25px;
-    right: 0px;
+form #subQuery{
+    display: none;
+    width: 100%;
+
+}
+.option{
+    padding-block: 0;
+    padding: 20px;
+    border: none;
+    border-bottom:1px solid #D3D3D3 ;
+    font: normal normal normal 16px/18px 'Museo_Slab_300';
+    letter-spacing: 0px;
+    color: #8E8E8E;
+    background: white;
+    z-index: 10;
 }
 form button{
-    margin-top:35px;
+  
+    margin-top: 35px;
     min-height: 45px;
     min-width: 150px;
     background: #3971B1;
     color: var(--color-text-secondary);
     align-self: flex-end;
     border: none;
-    
+    margin-block: 0;
+    z-index: 1;
     
 }
+.show{
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+    height: 667px;
+    width: 375px;
+    
+}
+.show_img{
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top:-90px;
+    right:0px;
+}
+
 
 
 main div.right{
@@ -273,7 +293,7 @@ main .item-2-p-1{
 }
 main .item-2-p-2{
     margin-block: 0;
-    max-width:455.45px;
+    width:455.45px;
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0px;
@@ -310,33 +330,38 @@ main .item-2-block-1-inner{
     font-size: 16px;
     line-height: 26px;
     font-family: 'Museo_Slab_300';
+    color: #8E8E8E;
 
 }
 main .item-2-block-1-inner2{
     display: flex;
     flex-direction: column;
     font-size: 16px;
-    line-height: 26px;
+    line-height: 25px;
+    height: 50;
+    
     font-family: 'Museo_Slab_300';
     letter-spacing: 0px;
     color: #8E8E8E;
 
 }
 
-
+/* --------------------------------------------------------footer--------------------------------------------------------- */
  footer{
     height: var(--footer-height);
     padding-inline: var(--parent-spacing-inline);
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+   
     justify-content: space-between;
+    background: #F4F4F4 
     
  }
 
 footer .content-1{
     margin-top:51px;
     display: flex;
-    justify-content: space-between;
+    gap:260px;
     align-items: flex-start;
 }
 .footer-logo{
@@ -347,17 +372,19 @@ footer .content-1{
     color: #3C3C3C;
     border: none;
     text-transform: capitalize;
+    background: #E4E4E4;
 }
 
 .footer-item{
     display: flex;
-    gap:190px
+    justify-content: space-between;
+    width: 100%;
 }
 .footer-links{
     display: flex;
     flex-direction: column;
     min-width: 134px;
-    min-height: 254px;
+    height: 254px;
     padding-block: 0;
 }
 .footer-links>a{
@@ -406,6 +433,7 @@ footer .content-1{
 .footer-item-2{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap:17px;
     justify-content: flex-end;
     align-items: center;
@@ -428,6 +456,7 @@ footer .content-2{
     align-items: center;
     padding: 20px 0;
     border-top: 1px solid #EAEAEA;
+    justify-content: space-between;
 }
 
 .content-2>p{
@@ -437,23 +466,19 @@ footer .content-2{
     opacity: 1;
     margin-block: 0;
 }
-
-.content-2 .p-1{
-    margin-right: 269.69px;
+.line-img{
+    display: none;
 }
-.content-2 .p-2{
-    margin-right: 378.69px;
+
+
+
+/* --------------------------------------------media-query---------------------------------------------- */
+
+@media (max-width: 376px) {
    
-}
-
-@media (max-width: 375px) {
-    body{
-        height: 667px;
-    }
     #parent{
         max-width: 375px;
-        height: 1955px;
-        border: 2px solid red;
+        height: calc(1955px - var(--min-footer-height));
         padding-inline: 20px;
         padding-block: 0;
         position: relative;
@@ -464,7 +489,7 @@ footer .content-2{
         justify-content: space-between;
         align-items: center;
         min-height: 75px;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #E6E6E6;;
     }
     header button#header-logo {
         font-family: 'Museo_Slab_500';
@@ -478,6 +503,9 @@ footer .content-2{
         border: none;
         text-transform: uppercase;
     }
+    #line-img{
+        display: block;
+    }
     header #header-links {
         display: none;
     }
@@ -485,20 +513,19 @@ footer .content-2{
         display: block;
     }
     main div.left h2{
-        width: 100%;
-        background: #3971B1;
-        font: normal normal normal 12px/14px 'Museo_Slab_300';
-        letter-spacing: 0px;
-        color: #FFFFFF;
-        opacity: 1;
-        min-height: 45px;
+        position: absolute;
+        top:0;
+        display: inline-block;
+        margin: 0;
+        top:573px;
+        right: 20px;
+        left: 20px;
         display: flex;
         justify-content: center;
-        align-items: center;
-        margin: 0;
-        position: absolute;
-        top:573px;
-       
+        background: #3971B1;
+        font: normal normal normal 12px/45px 'Museo_Slab_300';
+        letter-spacing: 0px;
+        color: #FFFFFF;
 
     }
     main div.left h1{
@@ -510,7 +537,7 @@ footer .content-2{
     form{
         display: none;
     }
-    
+
     main div.right .item-1 .img-con{
         position: absolute;
         width: 352px;
@@ -518,7 +545,7 @@ footer .content-2{
         top:0;
         right: 0;
         z-index: -1; 
-        border: 1px solid gray;
+        
         
     }
     main div.right .img-con .img-1{
@@ -529,20 +556,24 @@ footer .content-2{
         display: none;
     }
     main .item-2{
-        margin-top: 0;
-        margin-left: 0px;
+        margin: 0;
         position: absolute;
         top:125px;
+        left:20px;
         width: 331px;
         display: block;
 
+
     }
     main .item-2-p-1{
+        margin: 0;
         padding-left: 0;
         font: normal normal normal 24px/36px 'Museo_Slab_300';
         width: 331px;
         color: #383838;
-        min-height: 99px;
+        max-height: 99px;
+        margin-bottom: 40px;
+
     
     }
     main div.right .img-con .img-2{
@@ -551,56 +582,182 @@ footer .content-2{
         height: 45px;
         top:337.98px;
         left: 194.98px;
-        
-
-      
-    
     }
     main .item-2-p-2{
-        margin-block: 0;
-        padding-block: 0;
-        max-width:258px;
+        margin: 0;
+        padding: 0;
+        min-width:258px;
+        font-family: 'Museo_Slab_300';
         font-size: 16px;
-        line-height: 50px;
+        line-height: 25px;
         letter-spacing: 0px;
         color: #8E8E8E;
-        border: 1px solid gold;
-        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        
         
     }
-    main .item-2-p-2 span{
-        border: 1px solid green;
-        padding-block: 0;
-
-    }
+    .item-2 .mini{
+        padding: 0;
+        margin: 0;
+        display: block;
+        position: absolute;
+        top:563px;
+       
+    }   
     main .item-2-block-1{
         display: none;
     }
-    .mini{
-        position: absolute;
-        margin-top: 688px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-    }
     .item-2-mini-block-1>h2{
-        font: normal normal normal 16px/26px 'Museo_Slab_300';
+        display: inline-block;
+        padding-block: 0;
+        margin-block: 0;
+        font: normal normal normal 24px/27px 'Museo_Slab_300';
         letter-spacing: 0px;
         color: #3971B1;
+    }
+    .item-2-mini-block-1{
+        width: 335px;
         
     }
     .item-2-mini-block-1-inner{
-        width: 100%;
-        border-bottom: 1px solid #E6E6E6;
         display: flex;
         justify-content: space-between;
-        padding-block: 20px;
-        margin-top: 25px;
-        font: normal normal normal 16px/18px 'Museo_Slab_300';
+        padding-block: 25px;
+        border-bottom:1px solid #E6E6E6;
+        font: normal normal normal 16px/32px 'Museo_Slab_300';
         letter-spacing: 0px;
-        color: #8E8E8E;
+        color: #383838;  
+
+    }
+    .item-2-mini-block-2>h2{
+        margin-block: 0;
+        margin-top:50px;
+        font: normal normal normal 26px/26px 'Museo_Slab_300';
+        letter-spacing: 0px;
+        color: #3971B1;
     }
     
+    .form-con{
+        margin: 0;
+        padding:0 20px;
+    }
+    form{
+        width: 335px;
+        position: absolute;
+        top:100px;
+        right:0px;
 
+    }
+    form>input{
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 20px;
+        
+    }
+    form>button{
+        width: 100%;
+        margin-top: 50px;
+        
+    }
+ 
+    footer{
+        height: 776px;
+        display: block;
+        padding: 0;
+        margin: 0;
+        padding-inline: 20px;
+        position: relative;
+    }
+
+    footer .content-1{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    footer .footer-item-1{
+        margin: 0;
+        padding: 0;
+        
+        
+    }
+    footer .footer-item-1 button{
+        width: 100%;
+    }
+    footer .footer-item-2{
+        display: none;
+    }
+    footer .footer-links{
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 259px;
+        letter-spacing: 0px;
+        color: #383838;
+        display: grid;
+        grid-template-columns: repeat(2,127px);
+        column-gap: 41px;
+        height:138px; 
+        
+    }
+    .footer-links>a{
+        display: inline-block;
+        padding: 0;
+        margin:0; 
+        text-decoration: none;
+        font: normal normal normal 14px/14px 'Museo_Slab_300';
+    }
+
+   footer .content-2{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        min-height: 114px;
+        position: absolute;
+        bottom: 50px;
+        left:20px;
+        align-items: center;
+        justify-content: space-between;
+        right:20px;
+    }
+    footer .content-2>div>p{
+        padding: 0;
+        margin: 0;
+    }
+    
+    footer .footer-item-1{
+        margin:0;
+        padding: 0;
+        position:absolute;
+        top:45px;
+        left:20px;
+        right:20px;
+        
+    }
+    .footer-logo{
+        position: absolute;
+        top:457px;
+        left:144px;
+    }
 }
+@media( max-width:1050px){
+    footer .content-1{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       gap:20px;
+       margin-top:10px
+    }
+   
+   }
+   @media( max-width:980px) and (min-width:575px){
+       main{
+           display: flex;
+           flex-direction: column;
+       }
+       main div.left{
+           margin-top:600px
+       }
+       
+   
+   }
